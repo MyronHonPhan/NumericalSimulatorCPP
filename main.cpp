@@ -1,4 +1,5 @@
 #include <iostream>
+#include <Eigen/Dense>
 
 class Rocket {
 public:
@@ -43,4 +44,5 @@ public:
 
 int main() {
   std::cout << "Hello World!\n";
+  Eigen::MatrixXd m;
 }
