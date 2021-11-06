@@ -1,3 +1,6 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
 def eval_derivs(X):
     # Constants
     m = 1
@@ -29,6 +32,7 @@ def euler(dt, X, evaluate):
 
 # Initial conditions
 X = np.array([1,0])
+X1 = np.array([1,0])
 # Time step
 dt = 0.25
 # End time
@@ -37,10 +41,19 @@ iters = int(t/dt)
 
 # Data structure for results
 D = np.zeros((iters+1, 2))
+D1 = np.zeros((iters+1, 2))
 D[0] = X
+D1[0] = X1
 T = np.linspace(0,t, iters+1)
 
 # Iterate over number of steps
 for i in range(iters):
     # Compute an integration step and save
     D[i+1] = euler(dt, D[i], eval_derivs)
+    D1[i+1] = rk4(dt, D1[i], eval_derivs)
+
+
+
+plt.plot(D[:,0])
+plt.plot(D1[:,0])
+plt.show()

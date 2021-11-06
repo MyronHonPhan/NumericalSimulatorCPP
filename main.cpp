@@ -1,5 +1,8 @@
 #include <iostream>
-#include <Eigen/Dense>
+#include "Eigen/Dense"
+#include <vector>
+
+using namespace Eigen;
 
 class Rocket {
 public:
@@ -44,5 +47,15 @@ public:
 
 int main() {
   std::cout << "Hello World!\n";
-  Eigen::MatrixXd m;
+  MatrixXd m;
+  m.resize(3,10);
+  m.setZero();
+
+  Matrix3d f;
+
+  f << 1,2,3,
+      4,5,6,
+      7,8,9;
+
+  std::cout << m <<std::endl;
 }
