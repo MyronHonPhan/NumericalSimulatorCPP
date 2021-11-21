@@ -57,5 +57,7 @@ int main() {
       4,5,6,
       7,8,9;
 
-  std::cout << m <<std::endl;
+  int array[9];
+  for(int i = 0; i < 9; ++i) array[i] = i;
+  std::cout << Map<Matrix3i>(array) << std::endl;
 }
